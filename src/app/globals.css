@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-canvas: #FAF7F2;
+  --color-burgundy: #6B122B;
+  --color-gold: #C9A24B;
+  --color-dark: #16090E;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: #FAF7F2;
+  color: #1F171A;
+  font-family: var(--font-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Malayalam font styling helper */
+.lang-ml {
+  font-family: var(--font-malayalam), system-ui, sans-serif;
+  line-height: 1.75;
+}
+
+/* Tabular nums for clean alignment */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Specular holographic shimmer for 3D passes */
+.holographic-card {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12) 0%, rgba(201, 162, 75, 0.25) 50%, rgba(107, 18, 43, 0.2) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.holographic-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(229, 193, 108, 0.35) 0%, transparent 65%);
+  pointer-events: none;
+  mix-blend-mode: overlay;
+  transition: transform 0.2s ease-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #16090E;
+}
+::-webkit-scrollbar-thumb {
+  background: #7C1935;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C9A24B;
+}
+
+/* Glassmorphism helpers */
+.glass-light {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(107, 18, 43, 0.1);
+}
+
+.glass-dark {
+  background: rgba(22, 9, 14, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(201, 162, 75, 0.22);
+}
+
+.glass-gold {
+  background: rgba(201, 162, 75, 0.08);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(201, 162, 75, 0.3);
+}

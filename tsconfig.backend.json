@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.json",
+  "include": [
+    "src/server/**/*.ts",
+    "src/lib/**/*.ts",
+    "src/types/**/*.ts",
+    "src/app/api/**/*.ts",
+    "tests/backend/**/*.ts"
+  ],
+  "exclude": [
+    "src/components/**/*",
+    "src/app/layout.tsx",
+    "src/app/page.tsx",
+    "node_modules"
+  ]
+}
