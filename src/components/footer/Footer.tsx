@@ -19,11 +19,11 @@ export default function Footer() {
           {/* Col 1: Brand & Heritage Quote */}
           <div className="lg:col-span-5">
             <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
-              <div className="w-12 h-12 rounded-full bg-burgundy-900/60 border border-gold-400/80 p-0.5 flex items-center justify-center group-hover:border-gold-300 shadow overflow-hidden shrink-0 transition-colors">
+              <div className="w-12 h-12 rounded-xl bg-burgundy-900/60 border border-gold-400/80 p-0.5 flex items-center justify-center group-hover:border-gold-300 shadow overflow-hidden shrink-0 transition-colors">
                 <img
-                  src="/samastha-100.svg"
-                  alt="Samastha 100 Centenary Emblem"
-                  className="w-full h-full object-contain"
+                  src="/logo.png"
+                  alt="Samastha Centenary Logo"
+                  className="w-full h-full object-contain rounded-lg"
                 />
               </div>
               <div>
@@ -67,7 +67,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/about"
+                  href="/#about"
                   className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.about}
@@ -87,14 +87,6 @@ export default function Footer() {
                   className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.news}
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/events"
-                  className="hover:text-gold-300 transition-colors block"
-                >
-                  {t.nav.events}
                 </Link>
               </li>
               <li>

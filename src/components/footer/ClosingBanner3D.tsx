@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
-import { Sparkles, Calendar, HeartHandshake } from 'lucide-react';
+import { Sparkles, Radio, HeartHandshake } from 'lucide-react';
 
 export default function ClosingBanner3D() {
   const { t, locale } = useLanguage();
@@ -123,9 +123,9 @@ export default function ClosingBanner3D() {
       <div className="relative z-10 w-[92%] max-w-[840px] mx-auto text-center flex flex-col items-center">
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-burgundy-900/80 border border-gold-400/40 text-gold-300 text-[0.8125rem] font-bold uppercase tracking-wider mb-4 shadow">
           <img
-            src="/samastha-100.svg"
-            alt="Samastha 100 Centenary Emblem"
-            className="w-5 h-5 object-contain"
+            src="/logo.png"
+            alt="Samastha Centenary Logo"
+            className="w-5 h-5 object-contain rounded-sm"
           />
           <span>A CENTURY CELEBRATED TOGETHER</span>
         </div>
@@ -142,17 +142,17 @@ export default function ClosingBanner3D() {
 
         <p className="text-[1.0625rem] text-canvas-light/80 max-w-[640px] leading-relaxed mb-8">
           {locale === 'en'
-            ? 'Join our live streams, register for events, contribute to educational trusts, or step forward as a centenary volunteer.'
-            : 'തത്സമയ സംപ്രേഷണങ്ങൾ കാണാം, പരിപാടികളിൽ പങ്കെടുക്കാം, സ്കോളർഷിപ്പ് ഫണ്ടുകളിലേക്ക് സംഭാവന നൽകാം.'}
+            ? 'Join our live streams, explore our historic journey, contribute to educational trusts, or step forward as a centenary volunteer.'
+            : 'തത്സമയ സംപ്രേഷണങ്ങൾ കാണാം, ചരിത്ര യാത്ര അറിയാം, സ്കോളർഷിപ്പ് ഫണ്ടുകളിലേക്ക് സംഭാവന നൽകാം.'}
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/events"
+            href="/live"
             className="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-extrabold text-[0.9375rem] shadow-xl hover:shadow-gold-500/20 transition-all"
           >
-            <Calendar className="w-4 h-4 text-heritage-obsidian" />
-            <span>{t.hero.registerEvents}</span>
+            <Radio className="w-4 h-4 text-heritage-obsidian" />
+            <span>{t.hero.watchLive}</span>
           </Link>
           <Link
             href="/volunteer"

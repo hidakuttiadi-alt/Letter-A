@@ -129,8 +129,8 @@ export default function ParticipationHub() {
                 <EmptyState
                   title="No Event Passes Generated Yet"
                   desc="Register for any flagship seminar, academic summit, or peace conclave to generate your interactive 3D pass."
-                  actionLabel={t.myParticipation.exploreEvents}
-                  actionHref="/events"
+                  actionLabel={t.hero.watchLive}
+                  actionHref="/live"
                 />
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

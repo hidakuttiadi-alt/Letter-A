@@ -96,9 +96,9 @@ END:VCALENDAR`;
           <div className="flex items-center gap-3">
             <div className="w-12 h-12 rounded-2xl bg-burgundy-900/90 border-2 border-gold-400 p-1 flex items-center justify-center shadow-lg overflow-hidden shrink-0">
               <img
-                src="/samastha-100.svg"
-                alt="Samastha 100 Centenary Emblem"
-                className="w-full h-full object-contain drop-shadow"
+                src="/logo.png"
+                alt="Samastha Centenary Logo"
+                className="w-full h-full object-contain rounded-xl drop-shadow"
               />
             </div>
             <div>

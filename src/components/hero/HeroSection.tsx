@@ -33,9 +33,9 @@ export default function HeroSection() {
         {/* Centenary Eyebrow Pill */}
         <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-burgundy-900/80 border border-gold-400/40 text-gold-300 shadow-lg backdrop-blur-md mb-6 animate-pulse-subtle">
           <img
-            src="/samastha-100.svg"
-            alt="Samastha 100 Centenary Emblem"
-            className="w-5 h-5 object-contain"
+            src="/logo.png"
+            alt="Samastha Centenary Logo"
+            className="w-5 h-5 object-contain rounded-sm"
           />
           <span className="text-[0.8125rem] sm:text-[0.875rem] font-semibold tracking-wide">
             {t.hero.eyebrow}

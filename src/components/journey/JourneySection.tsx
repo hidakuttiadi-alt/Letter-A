@@ -153,10 +153,10 @@ export default function JourneySection() {
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
             <Link
-              href="/events"
+              href="/campaigns"
               className="px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-bold text-[0.875rem] shadow"
             >
-              {t.journey.ctaEvent}
+              {locale === 'en' ? 'Community Campaigns' : 'ക്യാമ്പയിനുകൾ'}
             </Link>
             <Link
               href="/volunteer"

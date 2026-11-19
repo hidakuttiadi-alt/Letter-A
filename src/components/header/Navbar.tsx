@@ -74,9 +74,9 @@ export default function Navbar() {
   // Primary 5 desktop navigation links
   const primaryNavLinks = [
     { href: '/', label: t.nav.home },
-    { href: '/about', label: t.nav.about },
+    { href: '/#about', label: t.nav.about },
     { href: '/live', label: t.nav.liveHub },
-    { href: '/events', label: t.nav.events },
+    { href: '/journey', label: t.nav.journey },
     { href: '/news', label: t.nav.news },
   ];
 
@@ -84,7 +84,6 @@ export default function Navbar() {
   const moreLinks = [
     { href: '/campaigns', label: t.nav.campaigns },
     { href: '/media', label: t.nav.media },
-    { href: '/journey', label: t.nav.journey },
     { href: '/donate', label: locale === 'en' ? 'Donate' : 'സംഭാവന' },
     { href: '/volunteer', label: locale === 'en' ? 'Volunteer' : 'സന്നദ്ധസേവനം' },
   ];
@@ -99,7 +98,23 @@ export default function Navbar() {
     if (href === '/') {
       return pathname === '/';
     }
+    if (href.startsWith('/#')) {
+      return false;
+    }
     return pathname.startsWith(href);
+  };
+
+  const handleNavClick = (href: string, e: React.MouseEvent) => {
+    if (href === '/#about') {
+      if (pathname === '/') {
+        e.preventDefault();
+        const el = document.getElementById('about');
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+          window.history.pushState(null, '', '#about');
+        }
+      }
+    }
   };
 
   const isMoreActive = moreLinks.some((link) => isLinkActive(link.href));
@@ -119,11 +134,11 @@ export default function Navbar() {
             href="/"
             className="flex items-center gap-2.5 text-left group focus:outline-none shrink-0"
           >
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-burgundy-900/80 border border-gold-400/80 p-0.5 flex items-center justify-center shadow-md group-hover:border-gold-300 transition-colors overflow-hidden shrink-0">
+            <div className="w-9 h-9 md:w-10 md:h-10 rounded-xl bg-burgundy-900/80 border border-gold-400/80 p-0.5 flex items-center justify-center shadow-md group-hover:border-gold-300 transition-colors overflow-hidden shrink-0">
               <img
-                src="/samastha-100.svg"
-                alt="Samastha 100 Logo"
-                className="w-full h-full object-contain group-hover:scale-105 transition-transform"
+                src="/logo.png"
+                alt="Samastha Centenary Logo"
+                className="w-full h-full object-contain rounded-lg group-hover:scale-105 transition-transform"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -144,6 +159,7 @@ export default function Navbar() {
                 <Link
                   key={link.href}
                   href={link.href}
+                  onClick={(e) => handleNavClick(link.href, e)}
                   className={`relative py-1 text-[0.875rem] font-medium whitespace-nowrap transition-colors duration-200 leading-normal ${
                     active
                       ? 'text-gold-300 font-semibold'
@@ -333,11 +349,11 @@ export default function Navbar() {
                   onClick={() => setMobileMenuOpen(false)}
                   className="flex items-center gap-2.5 focus:outline-none"
                 >
-                  <div className="w-8 h-8 rounded-full bg-burgundy-900/60 border border-gold-400/80 p-0.5 flex items-center justify-center shadow overflow-hidden shrink-0">
+                  <div className="w-8 h-8 rounded-xl bg-burgundy-900/60 border border-gold-400/80 p-0.5 flex items-center justify-center shadow overflow-hidden shrink-0">
                     <img
-                      src="/samastha-100.svg"
-                      alt="Samastha 100 Logo"
-                      className="w-full h-full object-contain"
+                      src="/logo.png"
+                      alt="Samastha Centenary Logo"
+                      className="w-full h-full object-contain rounded-md"
                     />
                   </div>
                   <span className="text-canvas-light font-bold text-[1rem] whitespace-nowrap leading-normal">
@@ -364,7 +380,10 @@ export default function Navbar() {
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={() => setMobileMenuOpen(false)}
+                      onClick={(e) => {
+                        setMobileMenuOpen(false);
+                        handleNavClick(link.href, e);
+                      }}
                       className={`flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left transition-colors text-[0.9375rem] font-medium whitespace-nowrap leading-relaxed ${
                         active
                           ? 'text-gold-300 bg-burgundy-900/60 border border-gold-500/30'

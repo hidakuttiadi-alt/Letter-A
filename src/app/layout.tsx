@@ -59,9 +59,9 @@ export const metadata: Metadata = {
   description:
     'Official Centenary participation platform for Samastha Kerala Jamiyyathul Ulama (1926–2026). Live stream broadcasts, event registration, 3D passes, volunteering, transparent donations, and archives.',
   icons: {
-    icon: '/samastha-100.svg',
-    shortcut: '/samastha-100.svg',
-    apple: '/samastha-100.svg',
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
   },
   keywords: [
     'Samastha 100',
