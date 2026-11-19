@@ -1,23 +1,8 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, Noto_Sans_Malayalam } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/context/LanguageContext';
 import { ParticipationProvider } from '@/context/ParticipationContext';
 import ToastNotification from '@/components/common/ToastNotification';
-
-const plusJakartaSans = Plus_Jakarta_Sans({
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-sans',
-  weight: ['300', '400', '500', '600', '700', '800'],
-});
-
-const notoSansMalayalam = Noto_Sans_Malayalam({
-  subsets: ['malayalam'],
-  display: 'swap',
-  variable: '--font-malayalam',
-  weight: ['400', '500', '600', '700'],
-});
 
 export const metadata: Metadata = {
   title: 'SamasthaLive (1926–2026) — A Century of Faith. A Future Together.',
@@ -41,7 +26,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${plusJakartaSans.variable} ${notoSansMalayalam.variable}`}>
+    <html lang="en">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="bg-canvas-light text-[#1F171A] selection:bg-burgundy-800 selection:text-gold-300">
         <LanguageProvider>
           <ParticipationProvider>

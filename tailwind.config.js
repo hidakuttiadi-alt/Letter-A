@@ -45,8 +45,8 @@ module.exports = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-        malayalam: ['var(--font-malayalam)', 'system-ui', 'sans-serif'],
+        sans: ['"Plus Jakarta Sans"', 'system-ui', '-apple-system', 'sans-serif'],
+        malayalam: ['"Noto Sans Malayalam"', '"Anek Malayalam"', 'system-ui', 'sans-serif'],
       },
       animation: {
         'marquee-slow': 'marquee 35s linear infinite',
