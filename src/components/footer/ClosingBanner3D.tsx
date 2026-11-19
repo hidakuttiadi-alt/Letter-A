@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useRef } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { Sparkles, Calendar, HeartHandshake } from 'lucide-react';
 
@@ -120,8 +121,12 @@ export default function ClosingBanner3D() {
 
       {/* Center Call to Action Card */}
       <div className="relative z-10 w-[92%] max-w-[840px] mx-auto text-center flex flex-col items-center">
-        <div className="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-burgundy-900/80 border border-gold-400/40 text-gold-300 text-[0.8125rem] font-bold uppercase tracking-wider mb-4 shadow">
-          <Sparkles className="w-4 h-4 text-gold-300" />
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-burgundy-900/80 border border-gold-400/40 text-gold-300 text-[0.8125rem] font-bold uppercase tracking-wider mb-4 shadow">
+          <img
+            src="/samastha-100.svg"
+            alt="Samastha 100 Centenary Emblem"
+            className="w-5 h-5 object-contain"
+          />
           <span>A CENTURY CELEBRATED TOGETHER</span>
         </div>
 
@@ -142,20 +147,20 @@ export default function ClosingBanner3D() {
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <button
-            onClick={() => scrollTo('events')}
+          <Link
+            href="/events"
             className="flex items-center gap-2 px-8 py-3.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-extrabold text-[0.9375rem] shadow-xl hover:shadow-gold-500/20 transition-all"
           >
             <Calendar className="w-4 h-4 text-heritage-obsidian" />
             <span>{t.hero.registerEvents}</span>
-          </button>
-          <button
-            onClick={() => scrollTo('volunteering')}
+          </Link>
+          <Link
+            href="/volunteer"
             className="flex items-center gap-2 px-7 py-3.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 border border-gold-400/40 font-bold text-[0.9375rem] shadow-lg transition-all"
           >
             <HeartHandshake className="w-4 h-4 text-gold-300" />
             <span>{t.hero.becomeVolunteer}</span>
-          </button>
+          </Link>
         </div>
       </div>
     </div>

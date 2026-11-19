@@ -94,8 +94,12 @@ END:VCALENDAR`;
         {/* Pass Header */}
         <div className="flex items-start justify-between border-b border-gold-500/30 pb-4 mb-5 relative z-10">
           <div className="flex items-center gap-3">
-            <div className="w-12 h-12 rounded-2xl bg-burgundy-800 border-2 border-gold-400 flex items-center justify-center shadow-lg">
-              <span className="text-gold-300 font-black text-[1rem]">100</span>
+            <div className="w-12 h-12 rounded-2xl bg-burgundy-900/90 border-2 border-gold-400 p-1 flex items-center justify-center shadow-lg overflow-hidden shrink-0">
+              <img
+                src="/samastha-100.svg"
+                alt="Samastha 100 Centenary Emblem"
+                className="w-full h-full object-contain drop-shadow"
+              />
             </div>
             <div>
               <span className="text-[0.6875rem] font-bold uppercase tracking-widest text-gold-400 block">
@@ -176,14 +180,14 @@ END:VCALENDAR`;
       <div className="flex flex-wrap items-center justify-center gap-3 mt-6 w-full">
         <button
           onClick={downloadPass}
-          className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-bold text-[0.875rem] shadow-lg transition-colors"
+          className="flex-1 w-[48%] sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-bold text-[0.875rem] shadow-lg transition-colors"
         >
           <Download className="w-4 h-4" />
           <span>{t.events.passDownload}</span>
         </button>
         <button
           onClick={downloadICS}
-          className="flex-1 min-w-[140px] flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 border border-gold-400/40 font-semibold text-[0.875rem] transition-colors"
+          className="flex-1 w-[48%] sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 border border-gold-400/40 font-semibold text-[0.875rem] transition-colors"
         >
           <Calendar className="w-4 h-4 text-gold-300" />
           <span>{t.events.passCalendar}</span>

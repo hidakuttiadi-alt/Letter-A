@@ -187,7 +187,7 @@ export default function Hero3DCanvas() {
         ctx.stroke();
 
         // Glowing Typography
-        ctx.font = 'bold 15px system-ui, sans-serif';
+        ctx.font = 'bold 0.9375rem system-ui, sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillStyle = '#E5C16C';

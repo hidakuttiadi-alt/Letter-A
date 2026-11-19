@@ -1,16 +1,12 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { MapPin, Phone, Mail, Globe, ArrowUp, Shield } from 'lucide-react';
 
 export default function Footer() {
   const { t, locale, toggleLocale } = useLanguage();
-
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -22,19 +18,23 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-white/10">
           {/* Col 1: Brand & Heritage Quote */}
           <div className="lg:col-span-5">
-            <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-burgundy-800 border border-gold-400 flex items-center justify-center">
-                <span className="text-gold-300 font-bold text-[0.875rem]">100</span>
+            <Link href="/" className="inline-flex items-center gap-3 mb-4 group">
+              <div className="w-12 h-12 rounded-full bg-burgundy-900/60 border border-gold-400/80 p-0.5 flex items-center justify-center group-hover:border-gold-300 shadow overflow-hidden shrink-0 transition-colors">
+                <img
+                  src="/samastha-100.svg"
+                  alt="Samastha 100 Centenary Emblem"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
-                <span className="font-extrabold text-[1.25rem] text-canvas-light tracking-tight block">
+                <span className="font-extrabold text-[1.25rem] text-canvas-light tracking-tight block group-hover:text-gold-300 transition-colors">
                   {t.brand.name}
                 </span>
                 <span className="text-[0.6875rem] text-gold-400 font-mono tracking-wider uppercase">
                   {t.brand.years} • {t.brand.emblemText}
                 </span>
               </div>
-            </div>
+            </Link>
 
             <p className="text-[0.9375rem] text-canvas-light/80 italic leading-relaxed mb-6 max-w-[420px]">
               {t.footer.heritageQuote}
@@ -58,68 +58,68 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-[0.875rem] text-canvas-light/80">
               <li>
-                <button
-                  onClick={() => scrollTo('home')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.home}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('about')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/about"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.about}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('live-hub')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/live"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.liveHub}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('news')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/news"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.news}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('events')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/events"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.events}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('donations')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/donate"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.hero.supportMission}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('volunteering')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/volunteer"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.volunteerCta}
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => scrollTo('journey')}
-                  className="hover:text-gold-300 transition-colors"
+                <Link
+                  href="/journey"
+                  className="hover:text-gold-300 transition-colors block"
                 >
                   {t.nav.journey}
-                </button>
+                </Link>
               </li>
             </ul>
           </div>

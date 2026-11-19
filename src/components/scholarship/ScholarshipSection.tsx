@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import {
   GraduationCap,
@@ -59,27 +60,27 @@ export default function ScholarshipSection() {
 
             {/* 3 Left Action Buttons */}
             <div className="flex flex-col gap-2.5">
-              <button
-                onClick={() => scrollTo('journey')}
+              <Link
+                href="/journey"
                 className="flex items-center justify-between px-4 py-3 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 text-[0.875rem] font-bold transition-all shadow-sm"
               >
                 <span>{t.scholarship.ctaHistory}</span>
                 <ArrowRight className="w-4 h-4 text-gold-300" />
-              </button>
-              <button
-                onClick={() => scrollTo('donations')}
+              </Link>
+              <Link
+                href="/donate"
                 className="flex items-center justify-between px-4 py-3 rounded-xl bg-white hover:bg-burgundy-50 text-burgundy-900 border border-burgundy-200 text-[0.875rem] font-semibold transition-all"
               >
                 <span>{t.scholarship.ctaEducation}</span>
                 <ArrowRight className="w-4 h-4 text-burgundy-700" />
-              </button>
-              <button
-                onClick={() => scrollTo('volunteering')}
+              </Link>
+              <Link
+                href="/volunteer"
                 className="flex items-center justify-between px-4 py-3 rounded-xl bg-canvas-light hover:bg-gold-50 text-gold-700 border border-gold-400/40 text-[0.875rem] font-semibold transition-all"
               >
                 <span>{t.scholarship.ctaVolunteer}</span>
                 <ArrowRight className="w-4 h-4 text-gold-600" />
-              </button>
+              </Link>
             </div>
           </div>
 

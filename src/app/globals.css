@@ -2,16 +2,82 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-Thin.ttf') format('truetype');
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-ExtraLight.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Anek Malayalam';
+  src: url('/Anek_Malayalam/static/AnekMalayalam-ExtraBold.ttf') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --bg-canvas: #FAF7F2;
   --color-burgundy: #6B122B;
   --color-gold: #C9A24B;
   --color-dark: #16090E;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-malayalam: 'Anek Malayalam', system-ui, sans-serif;
 }
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 body {
@@ -23,8 +89,15 @@ body {
 }
 
 /* Malayalam font styling helper */
+.lang-ml,
+.lang-ml input,
+.lang-ml textarea,
+.lang-ml select,
+.lang-ml button {
+  font-family: var(--font-malayalam), 'Anek Malayalam', system-ui, sans-serif;
+}
+
 .lang-ml {
-  font-family: var(--font-malayalam), system-ui, sans-serif;
   line-height: 1.75;
 }
 

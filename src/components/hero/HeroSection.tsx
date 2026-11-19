@@ -1,15 +1,16 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import Hero3DCanvas from './Hero3DCanvas';
-import { Radio, Calendar, HeartHandshake, UserPlus, Sparkles, ChevronDown } from 'lucide-react';
+import { Radio, Compass, HeartHandshake, UserPlus, Sparkles, ChevronDown } from 'lucide-react';
 
 export default function HeroSection() {
   const { t, locale } = useLanguage();
 
-  const scrollTo = (id: string) => {
-    const el = document.getElementById(id);
+  const scrollToExplore = () => {
+    const el = document.getElementById('about') || document.getElementById('explore');
     if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
@@ -30,8 +31,12 @@ export default function HeroSection() {
       {/* Center Hero Editorial Content */}
       <div className="relative z-10 w-[92%] max-w-[1200px] mx-auto text-center flex flex-col items-center">
         {/* Centenary Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-burgundy-900/80 border border-gold-400/40 text-gold-300 shadow-lg backdrop-blur-md mb-6 animate-pulse-subtle">
-          <Sparkles className="w-4 h-4 text-gold-300" />
+        <div className="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-burgundy-900/80 border border-gold-400/40 text-gold-300 shadow-lg backdrop-blur-md mb-6 animate-pulse-subtle">
+          <img
+            src="/samastha-100.svg"
+            alt="Samastha 100 Centenary Emblem"
+            className="w-5 h-5 object-contain"
+          />
           <span className="text-[0.8125rem] sm:text-[0.875rem] font-semibold tracking-wide">
             {t.hero.eyebrow}
           </span>
@@ -63,43 +68,43 @@ export default function HeroSection() {
           {t.hero.subtitle}
         </p>
 
-        {/* 4 Above-the-Fold Action Pills */}
+        {/* 4 Above-the-Fold Action Links */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 w-full max-w-[960px] mb-12">
-          {/* 1. Watch Live */}
-          <button
-            onClick={() => scrollTo('live-hub')}
+          {/* 1. Watch Live -> /live */}
+          <Link
+            href="/live"
             className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-burgundy-700 to-burgundy-800 hover:from-burgundy-600 hover:to-burgundy-700 text-canvas-light font-bold text-[0.9375rem] border border-gold-400/40 shadow-lg hover:shadow-gold-500/20 hover:-translate-y-0.5 transition-all group"
           >
             <Radio className="w-4 h-4 text-red-400 animate-pulse group-hover:scale-110 transition-transform" />
             <span>{t.hero.watchLive}</span>
-          </button>
+          </Link>
 
-          {/* 2. Register for Events */}
-          <button
-            onClick={() => scrollTo('events')}
+          {/* 2. Explore Centenary Journey -> /journey */}
+          <Link
+            href="/journey"
             className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-gradient-to-r from-gold-500 to-gold-400 hover:from-gold-400 hover:to-gold-300 text-heritage-obsidian font-bold text-[0.9375rem] border border-gold-300 shadow-lg hover:shadow-gold-500/30 hover:-translate-y-0.5 transition-all"
           >
-            <Calendar className="w-4 h-4 text-heritage-obsidian" />
-            <span>{t.hero.registerEvents}</span>
-          </button>
+            <Compass className="w-4 h-4 text-heritage-obsidian" />
+            <span>{locale === 'en' ? 'Centenary Journey' : 'ചരിത്ര യാത്ര'}</span>
+          </Link>
 
-          {/* 3. Support the Mission */}
-          <button
-            onClick={() => scrollTo('donations')}
+          {/* 3. Support the Mission -> /donate */}
+          <Link
+            href="/donate"
             className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-white/10 hover:bg-white/15 text-canvas-light font-semibold text-[0.9375rem] border border-white/20 hover:border-gold-400/50 backdrop-blur-md hover:-translate-y-0.5 transition-all"
           >
             <HeartHandshake className="w-4 h-4 text-gold-400" />
             <span>{t.hero.supportMission}</span>
-          </button>
+          </Link>
 
-          {/* 4. Become a Volunteer */}
-          <button
-            onClick={() => scrollTo('volunteering')}
+          {/* 4. Become a Volunteer -> /volunteer */}
+          <Link
+            href="/volunteer"
             className="flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-xl bg-burgundy-950/80 hover:bg-burgundy-900 text-gold-200 font-semibold text-[0.9375rem] border border-gold-500/30 hover:border-gold-400 hover:-translate-y-0.5 transition-all"
           >
             <UserPlus className="w-4 h-4 text-gold-400" />
             <span>{t.hero.becomeVolunteer}</span>
-          </button>
+          </Link>
         </div>
 
         {/* Bottom Social Proof Badge */}
@@ -110,11 +115,11 @@ export default function HeroSection() {
 
         {/* Scroll Indicator */}
         <button
-          onClick={() => scrollTo('about')}
+          onClick={scrollToExplore}
           className="mt-12 text-gold-400/60 hover:text-gold-300 transition-colors flex flex-col items-center gap-1 focus:outline-none"
-          aria-label="Scroll to next section"
+          aria-label="Scroll to explore sections"
         >
-          <span className="text-[0.6875rem] uppercase tracking-widest font-semibold">Scroll</span>
+          <span className="text-[0.6875rem] uppercase tracking-widest font-semibold">Explore</span>
           <ChevronDown className="w-4 h-4 animate-bounce" />
         </button>
       </div>

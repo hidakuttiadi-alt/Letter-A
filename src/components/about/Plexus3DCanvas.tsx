@@ -189,13 +189,13 @@ export default function Plexus3DCanvas() {
       ctx.save();
       ctx.textAlign = 'center';
       ctx.textBaseline = 'middle';
-      ctx.font = 'bold 16px system-ui, sans-serif';
+      ctx.font = 'bold 1rem system-ui, sans-serif';
       ctx.fillStyle = '#E5C16C';
       ctx.globalAlpha = 0.9;
       ctx.shadowColor = 'rgba(201, 162, 75, 0.6)';
       ctx.shadowBlur = 8;
       ctx.fillText('1926 — 2026', cx, cy - 8);
-      ctx.font = '11px system-ui, sans-serif';
+      ctx.font = '0.6875rem system-ui, sans-serif';
       ctx.fillStyle = '#FAF7F2';
       ctx.globalAlpha = 0.75;
       ctx.fillText('SAMASTHA 100', cx, cy + 12);

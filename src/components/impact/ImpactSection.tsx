@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { GraduationCap, BookOpenCheck, Award, ArrowUpRight } from 'lucide-react';
 
@@ -82,24 +83,24 @@ export default function ImpactSection() {
             {t.impact.footnote}
           </p>
           <div className="flex flex-wrap items-center gap-3">
-            <button
-              onClick={() => scrollTo('donations')}
+            <Link
+              href="/donate"
               className="px-5 py-2.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 font-bold text-[0.875rem] transition-all shadow-sm"
             >
               {t.impact.ctaSupport}
-            </button>
-            <button
-              onClick={() => scrollTo('volunteering')}
+            </Link>
+            <Link
+              href="/volunteer"
               className="px-5 py-2.5 rounded-xl bg-white hover:bg-burgundy-50 text-burgundy-900 border border-burgundy-200 font-semibold text-[0.875rem] transition-all"
             >
               {t.impact.ctaVolunteer}
-            </button>
-            <button
-              onClick={() => scrollTo('campaigns')}
+            </Link>
+            <Link
+              href="/campaigns"
               className="px-5 py-2.5 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-bold text-[0.875rem] transition-all"
             >
               {t.impact.ctaCampaigns}
-            </button>
+            </Link>
           </div>
         </div>
       </div>

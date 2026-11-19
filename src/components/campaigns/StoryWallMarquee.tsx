@@ -17,7 +17,7 @@ export default function StoryWallMarquee() {
         {storiesRow1.map((item, idx) => (
           <div
             key={`r1-${idx}`}
-            className="inline-block w-[340px] sm:w-[420px] p-6 rounded-2xl bg-heritage-dark border border-gold-500/20 text-canvas-light mx-3 shadow-lg whitespace-normal shrink-0"
+            className="inline-block w-[85%] sm:w-[45%] md:w-[32%] max-w-[420px] p-6 rounded-2xl bg-heritage-dark border border-gold-500/20 text-canvas-light mx-3 shadow-lg whitespace-normal shrink-0"
           >
             <div className="flex items-center justify-between mb-3 text-[0.75rem]">
               <span className="font-bold text-gold-400 uppercase tracking-wider">
@@ -46,7 +46,7 @@ export default function StoryWallMarquee() {
         {storiesRow2.map((item, idx) => (
           <div
             key={`r2-${idx}`}
-            className="inline-block w-[340px] sm:w-[420px] p-6 rounded-2xl bg-heritage-obsidian border border-white/10 text-canvas-light mx-3 shadow-lg whitespace-normal shrink-0"
+            className="inline-block w-[85%] sm:w-[45%] md:w-[32%] max-w-[420px] p-6 rounded-2xl bg-heritage-obsidian border border-white/10 text-canvas-light mx-3 shadow-lg whitespace-normal shrink-0"
           >
             <div className="flex items-center justify-between mb-3 text-[0.75rem]">
               <span className="font-bold text-gold-400 uppercase tracking-wider">

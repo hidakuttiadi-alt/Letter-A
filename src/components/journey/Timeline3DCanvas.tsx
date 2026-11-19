@@ -139,7 +139,7 @@ export default function Timeline3DCanvas({ activeEraIndex }: Timeline3DCanvasPro
         }
 
         // Year Label at Base
-        ctx.font = `${isActive ? 'bold 12px' : '10px'} system-ui, sans-serif`;
+        ctx.font = `${isActive ? 'bold 0.75rem' : '0.625rem'} system-ui, sans-serif`;
         ctx.textAlign = 'center';
         ctx.fillStyle = isActive ? '#E5C16C' : 'rgba(250, 247, 242, 0.6)';
         ctx.fillText(pillar.year, px, pyBottom + 18);

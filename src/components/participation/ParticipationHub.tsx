@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import { useParticipation, EventPass } from '@/context/ParticipationContext';
 import HolographicPass3D from '@/components/events/HolographicPass3D';
@@ -129,7 +130,7 @@ export default function ParticipationHub() {
                   title="No Event Passes Generated Yet"
                   desc="Register for any flagship seminar, academic summit, or peace conclave to generate your interactive 3D pass."
                   actionLabel={t.myParticipation.exploreEvents}
-                  onAction={() => scrollTo('events')}
+                  actionHref="/events"
                 />
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -181,7 +182,7 @@ export default function ParticipationHub() {
                   title="No Stream Reminders Active"
                   desc="Visit the Live Hub and click 'Set Reminder' on scheduled broadcasts or countdown sessions."
                   actionLabel="Go to Live Hub"
-                  onAction={() => scrollTo('live-hub')}
+                  actionHref="/live"
                 />
               ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -223,7 +224,7 @@ export default function ParticipationHub() {
                   title="No Volunteer Registrations Yet"
                   desc="Choose your preferred team (Welcome, Logistics, Digital, Language, First Aid) and apply to join the Centenary Corps."
                   actionLabel={t.myParticipation.findRole}
-                  onAction={() => scrollTo('volunteering')}
+                  actionHref="/volunteer"
                 />
               ) : (
                 <div className="space-y-4">
@@ -271,7 +272,7 @@ export default function ParticipationHub() {
                   title="No Contributions Made Yet"
                   desc="Support student scholarships, rural library books, or dialysis care through transparent simulated endowments."
                   actionLabel="Support a Mission"
-                  onAction={() => scrollTo('donations')}
+                  actionHref="/donate"
                 />
               ) : (
                 <div className="space-y-4">
@@ -322,7 +323,7 @@ export default function ParticipationHub() {
                   title="No Campaign Pledges Recorded"
                   desc="Pledge books for rural schools or commit volunteer hours in our centenary community campaigns."
                   actionLabel={t.myParticipation.joinCampaign}
-                  onAction={() => scrollTo('campaigns')}
+                  actionHref="/campaigns"
                 />
               ) : (
                 <div className="space-y-3">
@@ -357,7 +358,7 @@ export default function ParticipationHub() {
                   title="No Stories Submitted"
                   desc="Share your family's memories, elder's reflections, or past jubilee experiences to be featured on the Story Wall."
                   actionLabel="Share a Story"
-                  onAction={() => scrollTo('campaigns')}
+                  actionHref="/campaigns"
                 />
               ) : (
                 <div className="space-y-4">
@@ -403,12 +404,12 @@ function EmptyState({
   title,
   desc,
   actionLabel,
-  onAction,
+  actionHref,
 }: {
   title: string;
   desc: string;
   actionLabel: string;
-  onAction: () => void;
+  actionHref: string;
 }) {
   return (
     <div className="text-center py-12 px-4 max-w-[480px] mx-auto">
@@ -417,12 +418,12 @@ function EmptyState({
       </div>
       <h4 className="font-extrabold text-[1.25rem] text-burgundy-950 mb-2">{title}</h4>
       <p className="text-[0.875rem] text-[#6B5A60] leading-relaxed mb-6">{desc}</p>
-      <button
-        onClick={onAction}
-        className="px-6 py-2.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 font-bold text-[0.875rem] shadow transition-all"
+      <Link
+        href={actionHref}
+        className="inline-block px-6 py-2.5 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 font-bold text-[0.875rem] shadow transition-all"
       >
         {actionLabel}
-      </button>
+      </Link>
     </div>
   );
 }

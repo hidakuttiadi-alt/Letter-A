@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import Plexus3DCanvas from './Plexus3DCanvas';
 import { BookOpen, Sparkles, Compass, ShieldCheck } from 'lucide-react';
@@ -91,12 +92,12 @@ export default function AboutSection() {
 
             {/* CTAs */}
             <div className="flex flex-wrap items-center gap-4">
-              <button
-                onClick={() => scrollTo('journey')}
+              <Link
+                href="/journey"
                 className="px-6 py-3 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 font-bold text-[0.9375rem] shadow-md hover:shadow-lg transition-all"
               >
                 {t.about.exploreJourney}
-              </button>
+              </Link>
               <button
                 onClick={() => scrollTo('scholarship')}
                 className="px-6 py-3 rounded-xl bg-white hover:bg-burgundy-50 text-burgundy-900 border border-burgundy-800/20 font-semibold text-[0.9375rem] transition-colors"

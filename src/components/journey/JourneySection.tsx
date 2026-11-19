@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '@/context/LanguageContext';
 import Timeline3DCanvas from './Timeline3DCanvas';
 import { Milestone, Calendar, BookOpen, Sparkles, ArrowRight, ShieldCheck } from 'lucide-react';
@@ -151,24 +152,24 @@ export default function JourneySection() {
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <button
-              onClick={() => scrollTo('events')}
+            <Link
+              href="/events"
               className="px-6 py-3 rounded-xl bg-gold-500 hover:bg-gold-400 text-heritage-obsidian font-bold text-[0.875rem] shadow"
             >
               {t.journey.ctaEvent}
-            </button>
-            <button
-              onClick={() => scrollTo('volunteering')}
+            </Link>
+            <Link
+              href="/volunteer"
               className="px-5 py-3 rounded-xl bg-burgundy-800 hover:bg-burgundy-700 text-gold-200 border border-gold-400/40 font-semibold text-[0.875rem]"
             >
               {t.journey.ctaVolunteer}
-            </button>
-            <button
-              onClick={() => scrollTo('donations')}
+            </Link>
+            <Link
+              href="/donate"
               className="px-5 py-3 rounded-xl bg-white/10 hover:bg-white/15 text-canvas-light border border-white/20 font-semibold text-[0.875rem]"
             >
               {t.journey.ctaDonate}
-            </button>
+            </Link>
           </div>
         </div>
       </div>
